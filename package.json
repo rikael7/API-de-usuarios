@@ -12,8 +12,21 @@
     "dotenv": "^17.2.3",
     "express": "^4.22.1",
     "express-rate-limit": "^8.2.1",
+    "express-validator": "^7.3.1",
     "jsonwebtoken": "^9.0.3",
-    "mysql2": "^3.16.0",
+    "mysql2": "^3.16.2",
     "nodemon": "^3.1.11"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rikael7/API-de-usuarios.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rikael7/API-de-usuarios/issues"
+  },
+  "homepage": "https://github.com/rikael7/API-de-usuarios#readme"
 }

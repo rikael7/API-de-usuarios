@@ -19,14 +19,12 @@ const sanitize = (str) => {
     .replace(/"/g, "")
     .replace(/'/g, "");
 };
-
 // Limita o tamanho do input
 const limitar = (str, max) => str.substring(0, max);
 
 /* =========================
    CREATE - CADASTRO
 ========================= */
-
 exports.cadastrarUsuario = async (req, res) => {
   let { nome, email, senha } = req.body;
 
@@ -66,22 +64,18 @@ exports.cadastrarUsuario = async (req, res) => {
     }
   );
 };
-
 /* =========================
    READ - LISTAR
 ========================= */
-
 exports.listarUsuarios = (req, res) => {
   db.query('SELECT id, nome, email FROM users', (err, results) => {
     if (err) return res.status(500).json({ erro: err.message });
     res.json(results);
   });
 };
-
 /* =========================
    READ - POR ID
 ========================= */
-
 exports.buscarUsuarioPorId = (req, res) => {
   const id = parseInt(req.params.id);
 
@@ -102,11 +96,9 @@ exports.buscarUsuarioPorId = (req, res) => {
     }
   );
 };
-
 /* =========================
    UPDATE
 ========================= */
-
 exports.atualizarUsuario = (req, res) => {
   const id = parseInt(req.params.id);
   let { nome, email } = req.body;
@@ -132,11 +124,9 @@ exports.atualizarUsuario = (req, res) => {
     }
   );
 };
-
 /* =========================
    DELETE
 ========================= */
-
 exports.removerUsuario = (req, res) => {
   const id = parseInt(req.params.id);
 
@@ -149,11 +139,9 @@ exports.removerUsuario = (req, res) => {
     res.json({ mensagem: 'Usuário removido com sucesso!' });
   });
 };
-
 /* =========================
    LOGIN
 ========================= */
-
 exports.login = (req, res) => {
   let { email, senha } = req.body;
 
@@ -184,14 +172,13 @@ exports.login = (req, res) => {
       const token = jwt.sign(
         { id: results[0].id, nome: results[0].nome },
         SECRET_KEY,
-        { expiresIn: '1h' }
+        { expiresIn: '24h' }
       );
 
       res.json({ mensagem: 'Login realizado com sucesso!', token });
     }
   );
 };
-
 // require('dotenv').config();
 
 // const db = require('../models/db');

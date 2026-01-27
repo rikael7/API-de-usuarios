@@ -67,7 +67,8 @@ DB_NAME=sistema_cadastro<br>
 SECRET_KEY=sua_chave_secreta<br>
 <br>
 <h2>📦 Instalação<br></h2>
-npm install<br>
+npm init -y<br>
+npm install express body-parser mysql2 dotenv bcrypt jsonwebtoken express-rate-limit express-validator <br>
 
 <h2>▶️ Executar o projeto<br></h2>
 node app.js<br>

@@ -2,7 +2,14 @@
 📖 Descrição<br>
 Este projeto consiste em uma API RESTful desenvolvida em Node.js utilizando o framework Express, integrada a um banco de dados MySQL. O sistema implementa autenticação com JWT, criptografia de senhas com bcrypt, proteção contra ataques de força bruta com rate limiting e boas práticas de segurança como sanitização e validação de entradas.
 
-## 📸 API Demonstration
+## 📸 API Demonstration<br>
+1. Usuário envia email e senha<br>
+2. Backend valida no banco<br>
+3. Se estiver correto:<br>
+   - Gera JWT<br>
+   - Retorna token<br>
+4. Front guarda o token<br>
+5. Próximas requisições usam Authorization Bearer<br>
 ### Server Running
 ![Server Running](assets/server-running.png)
 

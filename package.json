@@ -4,7 +4,7 @@
   "description": "Backend Node.js with MySQL for registration system.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

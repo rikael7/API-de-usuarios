@@ -9,7 +9,10 @@ const { verificarToken } = require('../middlewares/auth')
 router.post('/register', userController.cadastrarUsuario);
 router.post('/login', loginLimiter, userController.login);
 
+
 //Rotas privadas
+router.get('/me', verificarToken, userController.sobremim);
+
 router.get('/', verificarToken, userController.listarUsuarios);
 router.get('/:id', verificarToken, userController.buscarUsuarioPorId);
 router.put('/:id', verificarToken, userController.atualizarUsuario);
